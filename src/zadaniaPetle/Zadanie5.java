@@ -11,6 +11,12 @@ public class Zadanie5 {
         int liczba = scanner.nextInt();
         int odwrocona = 0;
 
+        if (liczba == 0) {
+            System.out.println("Liczba 0 po odwróceniu to nadal liczba 0.");
+        } else {
+            int zero = 0;
+        }
+
         while (liczba != 0) {
             int cyfra = liczba % 10;
             odwrocona = odwrocona * 10 + cyfra;

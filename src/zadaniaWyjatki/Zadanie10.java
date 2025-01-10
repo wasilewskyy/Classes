@@ -15,21 +15,21 @@ public class Zadanie10 {
         int[] array = {10, 20, 0, 40};
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Podaj indeks: ");
+        System.out.print("Enter an index: ");
         int index = scanner.nextInt();
 
         try {
             int value = array[index];
-            System.out.println("Wartość: " + value);
+            System.out.println("Value: " + value);
 
             try {
                 double inverse = 1.0 / value;
-                System.out.println("Odwrotność: " + inverse);
+                System.out.println("Inverse: " + inverse);
             } catch (ArithmeticException e) {
-                System.out.println("Error: Nie można dzielić przez zero.");
+                System.out.println("Error: Cannot divide by zero.");
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Error: Indeks poza zakresem.");
+            System.out.println("Error: Index out of bounds.");
         }
     }
 }

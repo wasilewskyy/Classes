@@ -5,11 +5,6 @@ package zadaniaWyjatki;
 // Jeśli indeks jest poza zakresem tablicy, metoda powinna rzucić InvalidIndexException z odpowiednim komunikatem.
 // W metodzie main wywołaj tę metodę i obsłuż wyjątek.
 
-class InvalidIndexException extends Exception {
-    public InvalidIndexException(String message) {
-        super(message);
-    }
-}
 
 public class Zadanie7 {
     public static int getElement(int[] array, int index) throws InvalidIndexException {

@@ -9,7 +9,7 @@ public class Zadanie6 {
         System.out.println("Liczby pierwsze od 2 do 50:");
         for (int i = 2; i <= 50; i++) {
             boolean pierwsza = true;
-            for (int j = 2; j < i; j++) {
+            for (int j = 2; j * j <= i; j++) {
                 if (i % j == 0) {
                     pierwsza = false;
                     break;

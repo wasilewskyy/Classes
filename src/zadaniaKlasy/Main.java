@@ -23,6 +23,16 @@ public class Main {
         Kolor kolor = Kolor.GREEN;
         System.out.println("Kolor: " + kolor + ", Kod: " + kolor.getKodKoloru());
 
+        Kolor kolor1 = Kolor.RED;
+        Kolor kolor2 = Kolor.GREEN;
+        Kolor kolor3 = Kolor.BLUE;
+
+        if (kolor1 == kolor2) {
+            System.out.println("Kolory są takie same.");
+        } else {
+            System.out.println("Kolory są różne.");
+        }
+
         // Zadanie 13,17: Matematyka
         System.out.println("Suma: " + Matematyka.dodaj(3, 4));
         System.out.println("Suma trzech liczb: " + Matematyka.dodaj(1, 2, 3));

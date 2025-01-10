@@ -5,11 +5,7 @@ package zadaniaWyjatki;
 // Jeśli n jest ujemne, metoda powinna rzucić NegativeNumberException z komunikatem "Number cannot be negative".
 // W metodzie main wywołaj tę metodę i obsłuż ewentualny wyjątek za pomocą try-catch.
 
-class NegativeNumberException extends Exception {
-    public NegativeNumberException(String message) {
-        super(message);
-    }
-}
+
 
 public class Zadanie4 {
     public static int calculateSumToN(int n) throws NegativeNumberException {
