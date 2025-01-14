@@ -34,3 +34,16 @@ public class Zadanie14 {
         System.out.println("Suma przy użyciu BigDecimal (z String): " + sumFromString);
     }
 }
+
+// Wnioski:
+// 1. Użycie double (Sposób 1):
+// Wynik sumy przy użyciu typu double wynosi 0.9999999999999999 zamiast 1.0.
+// Wynika to z ograniczonej precyzji reprezentacji liczby zmiennoprzecinkowej w systemie binarnym.
+//
+// 2. BigDecimal z double (Sposób 2):
+//Wynik jest precyzyjniejszy niż w przypadku double, ale nadal nie idealny (1.000000000000000055511151231).
+//Wynika to z tego, że BigDecimal używa przekonwertowanej wartości `double`, która już zawiera błąd precyzji.
+//
+// 3. BigDecimal z String (Sposób 3):
+//Wynik jest dokładny (1.0), ponieważ w tym przypadku BigDecimal bezpośrednio operuje na wartości
+//tekstowej, co pozwala uniknąć błędów precyzji związanych z konwersją.

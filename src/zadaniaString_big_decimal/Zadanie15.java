@@ -16,18 +16,48 @@ public class Zadanie15 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Podaj kwotę do podziału: ");
-        String amountInput = scanner.nextLine();
-        System.out.print("Podaj liczbę osób: ");
-        int people = scanner.nextInt();
+        try {
+            System.out.print("Podaj kwotę do podziału: ");
+            String amountInput = scanner.nextLine();
+            BigDecimal amount = validateAndParseBigDecimal(amountInput);
 
-        BigDecimal amount = new BigDecimal(amountInput);
-        BigDecimal peopleCount = new BigDecimal(people);
+            System.out.print("Podaj liczbę osób: ");
+            int people = validateAndParseInt(scanner.nextLine());
 
-        BigDecimal perPerson = amount.divide(peopleCount, 2, RoundingMode.DOWN);
-        BigDecimal remainder = amount.subtract(perPerson.multiply(peopleCount));
+            if (people <= 0) {
+                throw new IllegalArgumentException("Liczba osób musi być większa od zera.");
+            }
 
-        System.out.println("Każda osoba otrzymuje: " + perPerson);
-        System.out.println("Pozostała kwota: " + remainder);
+            BigDecimal peopleCount = new BigDecimal(people);
+
+            BigDecimal perPerson = amount.divide(peopleCount, 2, RoundingMode.DOWN);
+            BigDecimal remainder = amount.subtract(perPerson.multiply(peopleCount));
+
+            System.out.println("Każda osoba otrzymuje: " + perPerson);
+            System.out.println("Pozostała kwota: " + remainder);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Błąd: Podano niepoprawny format liczby.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Błąd: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Błąd: Próba dzielenia przez zero.");
+        }
+    }
+
+    private static BigDecimal validateAndParseBigDecimal(String input) throws NumberFormatException {
+        BigDecimal value = new BigDecimal(input);
+        if (value.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("Kwota musi być większa od zera.");
+        }
+        return value;
+    }
+
+    private static int validateAndParseInt(String input) throws NumberFormatException {
+        int value = Integer.parseInt(input);
+        if (value <= 0) {
+            throw new IllegalArgumentException("Liczba musi być większa od zera.");
+        }
+        return value;
     }
 }

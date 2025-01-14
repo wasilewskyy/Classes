@@ -16,8 +16,14 @@ public class Zadanie2 {
         System.out.print("Podaj łańcuch znaków: ");
         String str = scanner.nextLine();
 
+        if (str.isBlank()) {
+            System.out.println("Błąd: Podany łańcuch znaków jest pusty.");
+            return;
+        }
+
         System.out.println("Pierwszy znak: " + str.charAt(0));
         System.out.println("Ostatni znak: " + str.charAt(str.length() - 1));
+
         if (str.length() >= 6) {
             String substring = str.substring(2, 6);
             System.out.println("Podłańcuch od trzeciego do szóstego znaku: " + substring);

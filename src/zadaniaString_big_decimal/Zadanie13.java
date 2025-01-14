@@ -17,3 +17,11 @@ public class Zadanie13 {
         System.out.println("Porównanie za pomocą compareTo(): " + decimalFromString.compareTo(decimalFromDouble));
     }
 }
+
+// Wnioski:
+// 1. Metoda equals() w BigDecimal sprawdza również skalę liczby.
+//decimalFromString ma skalę 1 (0.1), a decimalFromDouble ma skalę 17 (0.10000000000000001),
+// dlatego equals() zwraca false.
+//
+// 2. Metoda compareTo() ignoruje skalę i porównuje wartości liczbowo.
+// Dlatego compareTo() zwraca 0, co oznacza, że liczby są sobie równe pod względem wartości.

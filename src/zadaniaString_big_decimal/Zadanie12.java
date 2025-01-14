@@ -19,7 +19,11 @@ public class Zadanie12 {
         System.out.print("Podaj kwotę w dolarach (USD): ");
         String usdInput = scanner.nextLine();
 
-        BigDecimal usd = new BigDecimal(usdInput);
+        BigDecimal usd = Validator.validateAndParseBigDecimal(usdInput);
+        if (usd == null) {
+            return;
+        }
+
         BigDecimal exchangeRate = new BigDecimal("0.85");
         BigDecimal eur = usd.multiply(exchangeRate).setScale(2, RoundingMode.HALF_UP);
 

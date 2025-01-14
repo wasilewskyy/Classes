@@ -16,6 +16,11 @@ public class Zadanie3 {
         System.out.print("Podaj łańcuch znaków: ");
         String str = scanner.nextLine();
 
+        if (str.isBlank()) {
+            System.out.println("Błąd: Podany łańcuch znaków jest pusty lub zawiera tylko białe znaki.");
+            return; // Zakończenie działania programu
+        }
+
         String trimmed = str.trim();
         String upperCase = trimmed.toUpperCase();
         System.out.println("Przekształcony łańcuch: " + upperCase);

@@ -17,7 +17,9 @@ public class Zadanie19 {
         System.out.print("Podaj tekst: ");
         String text = scanner.nextLine().toLowerCase();
 
-        String[] words = text.split("\\s+");
+        String cleanedText = text.replaceAll("[.,!?]", "");
+
+        String[] words = cleanedText.split("\\s+");
         Map<String, Integer> wordCounts = new HashMap<>();
 
         for (String word : words) {

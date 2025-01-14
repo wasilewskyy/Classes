@@ -16,6 +16,11 @@ public class Zadanie9 {
         System.out.print("Podaj łańcuch znaków: ");
         String str = scanner.nextLine();
 
+        if (str.isBlank()) {
+            System.out.println("Błąd: Wpisz niepusty łańcuch znaków.");
+            return;
+        }
+
         String processed = str.replaceAll("\\s", "").toLowerCase();
         String reversed = new StringBuilder(processed).reverse().toString();
 
