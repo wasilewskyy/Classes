@@ -14,8 +14,7 @@ public class Main {
         punkt.wyswietl();
 
         // Zadanie 9: Kalkulator
-        Kalkulator kalkulator = new Kalkulator();
-        System.out.println("Suma: " + kalkulator.obliczSume(5, 10));
+        System.out.println("Suma: " + Kalkulator.obliczSume(5, 10));
 
         // Zadanie 10-12: Enum
         DzienTygodnia dzien = DzienTygodnia.ŚRODA;
