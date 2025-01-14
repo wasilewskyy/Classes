@@ -15,6 +15,11 @@ public class Zadanie7 {
         System.out.print("Podaj nazwę pliku: ");
         String filename = scanner.nextLine();
 
+        if (filename.isBlank()) {
+            System.out.println("Błąd: Nazwa pliku nie może być pusta.");
+            return;
+        }
+
         if (filename.startsWith("data_") && filename.endsWith(".txt")) {
             System.out.println("Plik spełnia warunki (rozpoczyna się od \"data_\" i kończy na \".txt\").");
         } else {

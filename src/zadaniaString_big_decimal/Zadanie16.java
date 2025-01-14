@@ -8,6 +8,12 @@ import java.util.Scanner;
 //Sprawdza, czy numer jest prawidłowy, stosując algorytm weryfikacji ISBN-10.
 //Wyświetla odpowiedni komunikat.
 
+class InvalidISBNException extends Exception {
+    public InvalidISBNException(String message) {
+        super(message);
+    }
+}
+
 public class Zadanie16 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -15,11 +21,28 @@ public class Zadanie16 {
         System.out.print("Podaj numer ISBN-10 (10 cyfr): ");
         String isbn = scanner.nextLine();
 
-        if (isbn.length() != 10 || !isbn.matches("\\d{9}[\\dX]")) {
-            System.out.println("Nieprawidłowy format ISBN-10.");
-            return;
+        try {
+            validateISBN(isbn);
+            if (isValidISBN10(isbn)) {
+                System.out.println("Numer ISBN-10 jest prawidłowy.");
+            } else {
+                System.out.println("Numer ISBN-10 jest nieprawidłowy.");
+            }
+        } catch (InvalidISBNException e) {
+            System.out.println("Błąd: " + e.getMessage());
         }
+    }
 
+    private static void validateISBN(String isbn) throws InvalidISBNException {
+        if (isbn.length() != 10) {
+            throw new InvalidISBNException("Numer ISBN-10 musi mieć dokładnie 10 znaków.");
+        }
+        if (!isbn.matches("\\d{9}[\\dX]")) {
+            throw new InvalidISBNException("Numer ISBN-10 może zawierać tylko cyfry i znak 'X' na końcu.");
+        }
+    }
+
+    private static boolean isValidISBN10(String isbn) {
         int sum = 0;
         for (int i = 0; i < 9; i++) {
             sum += (isbn.charAt(i) - '0') * (10 - i);
@@ -27,10 +50,6 @@ public class Zadanie16 {
         char lastChar = isbn.charAt(9);
         sum += (lastChar == 'X') ? 10 : (lastChar - '0');
 
-        if (sum % 11 == 0) {
-            System.out.println("Numer ISBN-10 jest prawidłowy.");
-        } else {
-            System.out.println("Numer ISBN-10 jest nieprawidłowy.");
-        }
+        return sum % 11 == 0;
     }
 }
