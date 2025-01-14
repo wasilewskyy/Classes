@@ -9,7 +9,7 @@ class Publication {
         this.author = (author != null && author.length() > 0) ? author : "Brak danych o publikacji.";
     }
 
-    public final void displayInfo() {
+    public void displayInfo() {
         System.out.println("Title: " + title + ", Author: " + author);
     }
 
