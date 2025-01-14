@@ -9,6 +9,7 @@ public class Zadanie3 {
     }
 
     public static void main(String[] args) {
-        sum(12, 10);
+        int wynik = sum(12, 10);
+        System.out.println("Wynik dodawania dwóch liczb: " + wynik);
     }
 }

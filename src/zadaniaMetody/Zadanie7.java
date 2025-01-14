@@ -5,6 +5,11 @@ package zadaniaMetody;
 
 public class Zadanie7 {
     public static double average(int[] numbers) {
+        if(numbers.length == 0) {
+            System.out.println("Tablica jest pusta, nie można obliczyć średniej.");
+            return 0;
+        }
+
         int sum = 0;
         for (int num : numbers) {
             sum += num;

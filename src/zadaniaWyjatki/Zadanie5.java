@@ -20,3 +20,10 @@ public class Zadanie5 {
         }
     }
 }
+
+//Wyjaśnienie:
+//
+//NumberFormatException:
+//Jest to wyjątek niekontrolowany (czyli unchecked exception), który dziedziczy po RuntimeException.
+//Wyjątki niekontrolowane nie muszą być zadeklarowane w sygnaturze metody (np. w throws), ponieważ są to błędy, które mogą wystąpić w czasie wykonywania programu.
+//Wyjątki kontrolowane (np. IOException), które są związane z problemami z wejściem/wyjściem, NumberFormatException wskazuje na problem w logice aplikacji, czyli nieprawidłowy format danych wejściowych.

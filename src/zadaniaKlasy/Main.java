@@ -14,14 +14,23 @@ public class Main {
         punkt.wyswietl();
 
         // Zadanie 9: Kalkulator
-        Kalkulator kalkulator = new Kalkulator();
-        System.out.println("Suma: " + kalkulator.obliczSume(5, 10));
+        System.out.println("Suma: " + Kalkulator.obliczSume(5, 10));
 
         // Zadanie 10-12: Enum
         DzienTygodnia dzien = DzienTygodnia.ŚRODA;
         System.out.println("Dzień tygodnia: " + dzien);
         Kolor kolor = Kolor.GREEN;
         System.out.println("Kolor: " + kolor + ", Kod: " + kolor.getKodKoloru());
+
+        Kolor kolor1 = Kolor.RED;
+        Kolor kolor2 = Kolor.GREEN;
+        Kolor kolor3 = Kolor.BLUE;
+
+        if (kolor1 == kolor2) {
+            System.out.println("Kolory są takie same.");
+        } else {
+            System.out.println("Kolory są różne.");
+        }
 
         // Zadanie 13,17: Matematyka
         System.out.println("Suma: " + Matematyka.dodaj(3, 4));
