@@ -5,6 +5,11 @@ class Book extends Publication implements LibraryResource {
 
     public Book(String title, String author, int pageCount) {
         super(title, author);
+
+        if (title == null || title.trim().length() <= 3) {
+            throw new IllegalArgumentException("Tytuł książki musi mieć więcej niż 3 znaki.");
+        }
+
         this.pageCount = pageCount > 0 ? pageCount : 100;
     }
 

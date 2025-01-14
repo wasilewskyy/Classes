@@ -7,7 +7,6 @@ public class Main {
         Publication[] publications = new Publication[]{
                 new Book("Pan Tadeusz", "Adam Mickiewicz", 300),
                 new Magazine("Vogue", "Anna Wintour", 5),
-                new Ebook("Java Programming", "James Gosling", 3),
                 new Audiobook("Slepnac od swiatel", "Jakub Żulczyk")
         };
 
@@ -71,9 +70,17 @@ public class Main {
         book.reserve();
 
         // Zadanie 15–16:
-        Ebook ebook = new Ebook("Clean Code", "Robert Martin", 2);
-        ebook.borrow();
+        Ebook ebook = new Ebook("Java Programming", "James Gosling", 3, true, true);
         ebook.download();
+
+        Ebook ebookWithoutPermission = new Ebook("Advanced Java", "Jane Smith", 3, true, false);
+        ebookWithoutPermission.download();
+
+        Ebook ebookNotLoggedIn = new Ebook("C++ Basics", "James Brown", 2, false, true);
+        ebookNotLoggedIn.download();
+
+        Ebook ebookNoCopies = new Ebook("Python for Beginners", "Emily White", 0, true, true);
+        ebookNoCopies.download();
 
         // Zadanie 17:
         System.out.println("\nAbstract class vs Interface:");
@@ -105,6 +112,10 @@ public class Main {
                 System.out.println(pub.description());
             }
         }
+
+        // Task 21–22: Storable functionality
+        sampleBook.reserve();
+        sampleBook.returnResource();
 
         // Zadanie 23:
         Audiobook audiobook = new Audiobook("Learning Java", "Author");
