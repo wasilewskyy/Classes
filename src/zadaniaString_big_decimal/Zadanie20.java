@@ -12,20 +12,34 @@ import java.util.Scanner;
 //Wyświetla wyniki dla każdego trybu zaokrąglania z dokładnością do dwóch miejsc po przecinku.
 
 public class Zadanie20 {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Podaj licznik: ");
+        System.out.print("Enter numerator: ");
         String numeratorInput = scanner.nextLine();
-        System.out.print("Podaj mianownik: ");
+        System.out.print("Enter denominator: ");
         String denominatorInput = scanner.nextLine();
 
-        BigDecimal numerator = new BigDecimal(numeratorInput);
-        BigDecimal denominator = new BigDecimal(denominatorInput);
+        if (denominatorInput.equals("0")) {
+            System.out.println("Error: Denominator cannot be zero.");
+            return;
+        }
 
-        System.out.println("RoundingMode.HALF_UP: " + numerator.divide(denominator, 2, RoundingMode.HALF_UP));
-        System.out.println("RoundingMode.HALF_DOWN: " + numerator.divide(denominator, 2, RoundingMode.HALF_DOWN));
-        System.out.println("RoundingMode.CEILING: " + numerator.divide(denominator, 2, RoundingMode.CEILING));
-        System.out.println("RoundingMode.FLOOR: " + numerator.divide(denominator, 2, RoundingMode.FLOOR));
+        try {
+            BigDecimal numerator = new BigDecimal(numeratorInput);
+            BigDecimal denominator = new BigDecimal(denominatorInput);
+
+            printDivisionResult(numerator, denominator, RoundingMode.HALF_UP);
+            printDivisionResult(numerator, denominator, RoundingMode.HALF_DOWN);
+            printDivisionResult(numerator, denominator, RoundingMode.CEILING);
+            printDivisionResult(numerator, denominator, RoundingMode.FLOOR);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number input.");
+        }
+    }
+
+    private static void printDivisionResult(BigDecimal numerator, BigDecimal denominator, RoundingMode roundingMode) {
+        BigDecimal result = numerator.divide(denominator, 2, roundingMode);
+        System.out.println(roundingMode.name() + ": " + result);
     }
 }

@@ -12,11 +12,20 @@ import java.util.Scanner;
 public class Zadanie4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Podaj tekst: ");
         String text = scanner.nextLine();
         System.out.print("Podaj podłańcuch: ");
         String subtext = scanner.nextLine();
+
+        if (text.isBlank()) {
+            System.out.println("Błąd: Tekst nie może być pusty.");
+            return;
+        }
+
+        if (subtext.isBlank()) {
+            System.out.println("Błąd: Podłańcuch nie może być pusty.");
+            return;
+        }
 
         if (text.contains(subtext)) {
             System.out.println("Podłańcuch znaleziony na pozycji: " + text.indexOf(subtext));

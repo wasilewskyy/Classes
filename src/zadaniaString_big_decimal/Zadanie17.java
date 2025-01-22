@@ -16,6 +16,11 @@ public class Zadanie17 {
         System.out.print("Podaj tekst: ");
         String text = scanner.nextLine();
 
+        if (text.isBlank()) {
+            System.out.println("Błąd: Wprowadzono pusty tekst lub tekst składający się tylko z białych znaków.");
+            return;
+        }
+
         String noPunctuation = text.replaceAll("[.,!?]", "");
         String singleSpaces = noPunctuation.replaceAll("\\s+", " ");
 

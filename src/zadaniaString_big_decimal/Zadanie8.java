@@ -15,8 +15,19 @@ public class Zadanie8 {
         System.out.print("Podaj listę słów oddzielonych przecinkami: ");
         String input = scanner.nextLine();
 
+        if (input.isBlank()) {
+            System.out.println("Błąd: Lista słów nie może być pusta.");
+            return;
+        }
+
+        if (!input.contains(",")) {
+            System.out.println("Błąd: Wpisz co najmniej dwa słowa oddzielone przecinkiem.");
+            return;
+        }
+
         String[] words = input.split(",");
         System.out.println("Rozbite słowa:");
+
         for (String word : words) {
             System.out.println(word.trim());
         }

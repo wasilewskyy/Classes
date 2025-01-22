@@ -15,8 +15,18 @@ public class Zadanie5 {
         System.out.print("Podaj łańcuch znaków: ");
         String str = scanner.nextLine();
 
+        if (str.isBlank()) {
+            System.out.println("Błąd: Podany łańcuch znaków jest pusty.");
+            return;
+        }
+
         String replaced = str.replace('a', 'e');
-        System.out.println("Oryginalny łańcuch: " + str);
-        System.out.println("Zmodyfikowany łańcuch: " + replaced);
+
+        if (str.equals(replaced)) {
+            System.out.println("Łańcuch nie zawiera znaku 'a', więc nie dokonano żadnych zmian.");
+        } else {
+            System.out.println("Oryginalny łańcuch: " + str);
+            System.out.println("Zmodyfikowany łańcuch: " + replaced);
+        }
     }
 }

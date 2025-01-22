@@ -18,9 +18,9 @@ public class Zadanie10 {
         String word = scanner.nextLine();
 
         int count = 0;
-        String[] words = text.split("\\s+");
-        for (String w : words) {
-            if (w.equals(word)) {
+        String[] wordsInText = text.split("\\s+");
+        for (String currentWord : wordsInText) {
+            if (currentWord.equals(word)) {
                 count++;
             }
         }

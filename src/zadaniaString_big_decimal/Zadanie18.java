@@ -15,6 +15,11 @@ public class Zadanie18 {
         System.out.print("Podaj tekst: ");
         String text = scanner.nextLine().toLowerCase();
 
+        if (text.isBlank()) {
+            System.out.println("Błąd: Wprowadzono pusty tekst.");
+            return;
+        }
+
         int vowels = 0, consonants = 0;
         for (char c : text.toCharArray()) {
             if (c >= 'a' && c <= 'z') {
@@ -23,6 +28,9 @@ public class Zadanie18 {
                 } else {
                     consonants++;
                 }
+            } else if (c != ' ') {
+                System.out.println("Błąd: Tekst zawiera nieakceptowane znaki.");
+                return;
             }
         }
 

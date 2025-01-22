@@ -17,6 +17,11 @@ public class Zadanie6 {
         System.out.print("Podaj drugi łańcuch znaków: ");
         String str2 = scanner.nextLine();
 
+        if (str1.isBlank() || str2.isBlank()) {
+            System.out.println("Błąd: Żaden z łańcuchów nie może być pusty.");
+            return;
+        }
+
         if (str1.equalsIgnoreCase(str2)) {
             System.out.println("Łańcuchy są takie same (niezależnie od wielkości liter).");
         } else {
