@@ -10,7 +10,19 @@ public class Zadanie11 {
         HashMap<String, Integer> stock = new HashMap<>();
         stock.put("Jabłka", 10);
         stock.put("Banany", 5);
-        System.out.println("Banany: " + stock.getOrDefault("Banany", 0));
-        System.out.println("Gruszki: " + stock.getOrDefault("Gruszki", 0));
+
+        String product1 = "Banany";
+        if (stock.containsKey(product1)) {
+            System.out.println(product1 + ": " + stock.get(product1));
+        } else {
+            System.out.println("Brak produktu: " + product1);
+        }
+
+        String product2 = "Gruszki";
+        if (stock.containsKey(product2)) {
+            System.out.println(product2 + ": " + stock.get(product2));
+        } else {
+            System.out.println("Brak produktu: " + product2);
+        }
     }
 }
