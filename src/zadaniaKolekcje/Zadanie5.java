@@ -10,9 +10,11 @@ import java.util.Queue;
 public class Zadanie5 {
     public static void main(String[] args) {
         Queue<String> queue = new LinkedList<>();
-        queue.add("First");
-        queue.add("Second");
-        queue.add("Third");
+
+        queue.offer("First");
+        queue.offer("Second");
+        queue.offer("Third");
+
         System.out.println("Polled element: " + queue.poll());
         System.out.println("Queue after poll: " + queue);
     }
