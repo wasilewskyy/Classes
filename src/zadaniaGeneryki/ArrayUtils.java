@@ -5,6 +5,10 @@ package zadaniaGeneryki;
 
 public class ArrayUtils {
     public static <T> void printArray(T[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException("Array cannot be null.");
+        }
+
         for (T element : array) {
             System.out.println(element);
         }

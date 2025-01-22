@@ -8,6 +8,9 @@ package zadaniaGeneryki;
 public class StringLengthTransformer implements Transformer<String, Integer> {
     @Override
     public Integer transform(String source) {
+        if (source == null) {
+            throw new IllegalArgumentException("Input string cannot be null.");
+        }
         return source.length();
     }
 }

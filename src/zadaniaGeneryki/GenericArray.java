@@ -24,9 +24,19 @@ public class GenericArray<T> {
         return array[index];
     }
 
-    public int getSize() { return array.length; }
+    public int getSize() {
+        return array.length;
+    }
 
     public void copyFrom(GenericArray<? extends T> source) {
+        if (source == null) {
+            throw new IllegalArgumentException("Source array cannot be null.");
+        }
+
+        if (source.getSize() != this.getSize()) {
+            throw new IllegalArgumentException("Source array size must match the target array size.");
+        }
+
         for (int i = 0; i < array.length; i++) {
             array[i] = source.get(i);
         }
