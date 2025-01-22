@@ -9,6 +9,10 @@ package zadaniaGeneryki;
 
 public class MathUtils {
     public static <T extends Number> double average(T[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty.");
+        }
+
         double sum = 0;
         for (T element : array) {
             sum += element.doubleValue();
@@ -17,6 +21,10 @@ public class MathUtils {
     }
 
     public static <T extends Number> double sumArray(T[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be null or empty.");
+        }
+
         double sum = 0;
         for (T element : array) {
             sum += element.doubleValue();

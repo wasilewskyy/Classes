@@ -10,11 +10,21 @@ package zadaniaGeneryki;
 public class StringIntegerConverter extends TwoWayConverter<String, Integer> {
     @Override
     public Integer convertForward(String a) {
-        return Integer.parseInt(a);
+        if (a == null) {
+            throw new IllegalArgumentException("Input string cannot be null.");
+        }
+        try {
+            return Integer.parseInt(a);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Input string must be a valid integer.", e);
+        }
     }
 
     @Override
     public String convertBackward(Integer b) {
+        if (b == null) {
+            throw new IllegalArgumentException("Input integer cannot be null.");
+        }
         return b.toString();
     }
 }

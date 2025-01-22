@@ -5,6 +5,10 @@ package zadaniaGeneryki;
 
 public class ArrayFiller {
     public static void fillArray(GenericArray<? super Integer> array, Integer value) {
+        if (array == null) {
+            throw new IllegalArgumentException("Array cannot be null.");
+        }
+
         for (int i = 0; i < array.getSize(); i++) {
             array.set(i, value);
         }
