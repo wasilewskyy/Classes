@@ -1,7 +1,5 @@
 package zadaniaStreamy;
 
-
-
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
@@ -11,9 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-
 public class Exercises {
-
     private static final List<Holding> holdings = new HoldingGenerator().generate();
 
     public static void main(String[] args) {
@@ -230,5 +226,4 @@ public class Exercises {
     private static Stream<Account> getAccoutStream() {
         return getUserStream().flatMap(user -> user.getAccounts().stream());
     }
-
 }
