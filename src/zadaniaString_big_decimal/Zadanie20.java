@@ -15,13 +15,13 @@ public class Zadanie20 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Podaj licznik: ");
+        System.out.print("Enter numerator: ");
         String numeratorInput = scanner.nextLine();
-        System.out.print("Podaj mianownik: ");
+        System.out.print("Enter denominator: ");
         String denominatorInput = scanner.nextLine();
 
         if (denominatorInput.equals("0")) {
-            System.out.println("Błąd: Mianownik nie może być zerem.");
+            System.out.println("Error: Denominator cannot be zero.");
             return;
         }
 
@@ -34,7 +34,7 @@ public class Zadanie20 {
             printDivisionResult(numerator, denominator, RoundingMode.CEILING);
             printDivisionResult(numerator, denominator, RoundingMode.FLOOR);
         } catch (NumberFormatException e) {
-            System.out.println("Błąd: Wprowadzono nieprawidłową liczbę.");
+            System.out.println("Error: Invalid number input.");
         }
     }
 
