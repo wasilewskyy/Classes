@@ -11,6 +11,8 @@ import java.util.function.*;
 
 public class TransformAndSum {
     public static int transformAndSum(int[] array, Function<Integer, Integer> transformer) {
-        return Arrays.stream(array).map(transformer::apply).sum();
+        return Arrays.stream(array)
+                .map(transformer::apply)
+                .sum();
     }
 }

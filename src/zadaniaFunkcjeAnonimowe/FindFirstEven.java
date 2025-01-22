@@ -10,6 +10,9 @@ import java.util.*;
 
 public class FindFirstEven {
     public static Optional<Integer> findFirstEven(int[] numbers) {
-        return Arrays.stream(numbers).filter(n -> n % 2 == 0).boxed().findFirst();
+        return Arrays.stream(numbers)
+                .filter(n -> n % 2 == 0)
+                .boxed()
+                .findFirst();
     }
 }
